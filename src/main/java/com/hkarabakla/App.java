@@ -1,6 +1,7 @@
 package com.hkarabakla;
 
 import com.hkarabakla.entities.Book;
+import com.hkarabakla.services.AuthorService;
 import com.hkarabakla.services.BookService;
 import com.hkarabakla.services.CategoryService;
 import com.hkarabakla.services.UserService;
@@ -20,8 +21,12 @@ public class App
         CategoryService categoryService = (CategoryService) appContext.getBean("categoryService");
         categoryService.categoryOperations();
 
+
         BookService bookService = (BookService) appContext.getBean("bookService");
         bookService.bookOperations();
+
+        AuthorService authorService = (AuthorService) appContext.getBean("authorService");
+        authorService.authorOperations();
 
         appContext.close();
     }
