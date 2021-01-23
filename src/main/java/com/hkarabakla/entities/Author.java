@@ -11,14 +11,14 @@ public class Author {
     private int id;
 
     private String name;
-
+    /*
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(
             name = "author_book",
             joinColumns = @JoinColumn(name = "author_id"),
             inverseJoinColumns = @JoinColumn(name = "book_id"))
     private Set<Book> books;
-
+    */
     public int getId() {
         return id;
     }
@@ -34,7 +34,7 @@ public class Author {
     public void setName(String name) {
         this.name = name;
     }
-
+    /*
     public Set<Book> getBooks() {
         return books;
     }
@@ -43,6 +43,7 @@ public class Author {
         this.books = books;
     }
 
+     */
     @Override
     public String toString() {
         return "Author{" +

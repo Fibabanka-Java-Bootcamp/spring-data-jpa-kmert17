@@ -16,13 +16,13 @@ public class Order {
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id", referencedColumnName = "id")
     private User user;
-
+    /*
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(
             name = "order_book",
             joinColumns = @JoinColumn(name = "order_id"),
             inverseJoinColumns = @JoinColumn(name = "booky_id"))
-    private Set<Book> booky;
+    private Set<Book> booky; */
 
     public int getId() {
         return id;
@@ -47,14 +47,14 @@ public class Order {
     public void setUser(User user) {
         this.user = user;
     }
-
+    /*
     public Set<Book> getBooky() {
         return booky;
     }
 
     public void setBooky(Set<Book> booky) {
         this.booky = booky;
-    }
+    }*/
 
     @Override
     public String toString() {
@@ -62,7 +62,7 @@ public class Order {
                 "id=" + id +
                 ", created_at=" + created_at +
                 ", user=" + user +
-                ", booky=" + booky +
+                //", booky=" + booky +
                 '}';
     }
 }

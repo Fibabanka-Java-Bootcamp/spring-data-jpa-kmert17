@@ -31,11 +31,12 @@ public class Book {
     @JoinColumn(name = "category_id", referencedColumnName = "id")
     private Category category;
 
+    /*
     @ManyToMany(mappedBy = "books", fetch = FetchType.EAGER)
     private Set<Author> authors;
 
     @ManyToMany(mappedBy = "booky", fetch = FetchType.EAGER)
-    private Set<Order> orders;
+    private Set<Order> orders;*/
 
 
 
@@ -119,6 +120,7 @@ public class Book {
         this.imageUrl = imageUrl;
     }
 
+    /*
     public Set<Author> getAuthors() {
         return authors;
     }
@@ -126,14 +128,15 @@ public class Book {
     public void setAuthors(Set<Author> authors) {
         this.authors = authors;
     }
-
+    */
+    /*
     public Set<Order> getOrders() {
         return orders;
     }
 
     public void setOrders(Set<Order> orders) {
         this.orders = orders;
-    }
+    } */
 
     @Override
     public String toString() {
@@ -148,8 +151,8 @@ public class Book {
                 ", currency='" + currency + '\'' +
                 ", imageUrl='" + imageUrl + '\'' +
                 ", category=" + category +
-                ", authors=" + authors +
-                ", orders=" + orders +
+                //", authors=" + authors +
+                //", orders=" + orders +
                 '}';
     }
 }
