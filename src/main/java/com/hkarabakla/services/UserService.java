@@ -29,6 +29,6 @@ public class UserService {
 
         System.out.println(u.getId());
 
-        System.out.println(repo.findAllByNameContainingIgnoreCase("se"));
+        System.out.println("User: " + repo.findAllByNameContainingIgnoreCase("se"));
     }
 }
