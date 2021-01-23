@@ -1,7 +1,9 @@
 package com.hkarabakla.entities;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 public class Category {
@@ -13,7 +15,7 @@ public class Category {
     private String name;
 
     @OneToMany(mappedBy = "category", cascade = CascadeType.REMOVE)
-    private List<Book> books;
+    private Set<Book> books = new HashSet<Book>();
 
     public int getId() {
         return id;
@@ -31,11 +33,11 @@ public class Category {
         this.name = name;
     }
 
-    public List<Book> getBooks() {
+    public Set<Book> getBooks() {
         return books;
     }
 
-    public void setBooks(List<Book> books) {
+    public void setBooks(Set<Book> books) {
         this.books = books;
     }
 

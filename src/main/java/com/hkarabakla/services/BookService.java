@@ -17,6 +17,8 @@ public class BookService {
 
     public void bookOperations() {
 
-        System.out.println("Books: " + repo.findAllByNameContainingIgnoreCase("le"));
+        System.out.println(repo.findAllByNameContainingIgnoreCase("le"));
+        System.out.println("Book: " + repo.findByName("Lectures on Physics"));
+
     }
 }

@@ -6,8 +6,7 @@ import com.hkarabakla.repositories.CategoryRepo;
 import com.hkarabakla.repositories.BookRepo;
 import org.springframework.stereotype.Component;
 
-import java.util.Collections;
-import java.util.UUID;
+import java.util.*;
 
 @Component
 public class CategoryService {
@@ -26,9 +25,16 @@ public class CategoryService {
         b1.setIsbn(UUID.randomUUID().toString());
         b1.setName("Lectures on Physics");
 
+        Book b2 = new Book();
+        b2.setIsbn(UUID.randomUUID().toString());
+        b2.setName("Lectures on Maths");
+
+        Set<Book> bookie = new HashSet<Book>();
+        bookie.add(b1);
+        bookie.add(b2);
         Category c1 = new Category();
         c1.setName("Physics");
-        c1.setBooks(Collections.singletonList(b1));
+        c1.setBooks(bookie);
 
         categoryRepo.save(c1);
         bookRepo.save(b1);
