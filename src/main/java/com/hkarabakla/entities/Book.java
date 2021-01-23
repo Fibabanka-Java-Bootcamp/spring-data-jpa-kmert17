@@ -34,6 +34,11 @@ public class Book {
     @ManyToMany(mappedBy = "books", fetch = FetchType.EAGER)
     private Set<Author> authors;
 
+    @ManyToMany(mappedBy = "booky", fetch = FetchType.EAGER)
+    private Set<Order> orders;
+
+
+
     public String getIsbn() {
         return isbn;
     }
@@ -122,6 +127,14 @@ public class Book {
         this.authors = authors;
     }
 
+    public Set<Order> getOrders() {
+        return orders;
+    }
+
+    public void setOrders(Set<Order> orders) {
+        this.orders = orders;
+    }
+
     @Override
     public String toString() {
         return "Book{" +
@@ -136,6 +149,7 @@ public class Book {
                 ", imageUrl='" + imageUrl + '\'' +
                 ", category=" + category +
                 ", authors=" + authors +
+                ", orders=" + orders +
                 '}';
     }
 }
